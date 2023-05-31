@@ -10,11 +10,13 @@ How to install;
 
 [Install Instructions](http://pandoc.org/installing.html)
 
-## Ubuntu Linux
+## Ubuntu/Mint Linux
 
 I would recommend installing Pandoc directly from the latest Debian package.  Located here: [Pandoc Release Page for Pandoc 2.x](https://github.com/jgm/pandoc/releases/ "Pandoc Latest deb package").   You will need to issue a ```dpkg``` command to install the deb package directly.  ```sudo dpkg -i ```
 
-### Linux dependencies - On Debian/Ubuntu
+Alternate installation with the distro package: ```sudo apt update; sudo apt install pandoc```
+
+### Linux dependencies - On Debian/Ubuntu/Mint
 
 * texlive
 * texlive-latex-recommended
