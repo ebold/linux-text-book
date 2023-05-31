@@ -33,18 +33,21 @@ Install these via this command:
 sudo apt-get install texlive texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-xetex texlive-font-utils librsvg2-bin
 ```
 
-Additional Fonts are needed.  To add the [Charis Sil font](http://packages.sil.org/ "Charis SIL") to Ubuntu can add the repo via these steps:
+Additional Fonts are needed:
+* [Charis Sil font](http://packages.sil.org/ "Charis SIL")
+* Inconsolata
 
-* ```wget http://packages.sil.org/sil.gpg```
-* ```sudo apt-key add sil.gpg```
-* ```sudo apt-add-repository "deb http://packages.sil.org/ubuntu/ $(lsb_release -sc) main"```
-* ```sudo apt-get update```
-* ```sudo apt-get install fonts-sil-charis```
+Commands to install the Charis Sil and Inconsolata fonts:
 
-To Install the Inconsolata font:
-
-* ```sudo apt-get install fonts-inconsolata```
-* ```sudo fc-cache -fv```
+   * Charis Sil font:
+      * ```(wget -O- https://packages.sil.org/keys/pso-keyring-2016.gpg | sudo tee /etc/apt/trusted.gpg.d/pso-keyring-2016.gpg)&>/dev/null```
+         * Ubuntu: ```(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list>/dev/null <<< "deb http://packages.sil.org/$ID $VERSION_CODENAME main")```
+         * Mint:   ```(. /etc/os-release && sudo tee /etc/apt/sources.list.d/packages-sil-org.list>/dev/null <<< "deb http://packages.sil.org/ubuntu $UBUNTU_CODENAME main")```
+      * ```sudo apt-get update```
+      * ```sudo apt-get install fonts-sil-charis```
+   * Inconsolata font:
+      * ```sudo apt-get install fonts-inconsolata```
+      * ```sudo fc-cache -fv```
 
 To confirm install from the command line type: ```pandoc -v```
 
